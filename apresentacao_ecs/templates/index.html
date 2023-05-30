@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contador de Cliques</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#increment-btn').click(function() {
+                $.post('/increment', function(data) {
+                    $('#count').text(data.count);
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>Contador de Cliques</h1>
+    <p>Contagem atual: <span id="count">{{ count }}</span></p>
+    <button id="increment-btn">Incrementar</button>
+</body>
+</html>
